@@ -4,12 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Proyecto;
 use Illuminate\Http\Request;
+use DB;
+use PDF;
 
 class ProyectoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+     public function pdf()
+     {
+         $proyecto=Proyecto::orderBy('NombreProyecto', 'ASC')->get();
+         $pdf=PDF::loadView('proyecto.reporte', compact('proyecto'));
+         return $pdf->stream('proyectos.pdf');
+     }
+
     public function index()
     {
         $proyecto=Proyecto::orderBy('NombreProyecto', 'ASC')->get();

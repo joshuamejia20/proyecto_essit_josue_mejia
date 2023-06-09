@@ -12,6 +12,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('proyecto.index')}}">Listado de Proyecto</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/reporte">Reporte PDF</a>
+                </li>
             </ul>
         </div>
     </div>

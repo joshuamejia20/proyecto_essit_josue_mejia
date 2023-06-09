@@ -17,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProyectoController::class, 'index'])->name('proyecto.index');
 
+Route::get('/reporte', [App\Http\Controllers\ProyectoController::class, 'pdf'])->name('proyectos.pdf');
+
 Route::resource('/proyecto', ProyectoController::class);
